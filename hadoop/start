@@ -1,0 +1,27 @@
+yes Y | hdfs namenode -format
+# remove all temp file if datanode not start up
+yes Y | start-dfs.sh
+yes Y | start-yarn.sh
+hdfs dfs -mkdir /hbase
+yes Y | start-hbase.sh
+
+# jps => master 6 slave 5
+# test hdfs
+hdfs dfs -mkdir /user/root/input
+hdfs dfs -put /usr/hadoop/etc/hadoop/* input
+# test hadoop
+yarn jar /usr/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount input output
+hdfs dfs -get output
+cat output/* | less
+# test hbase
+hbase shell
+create 'test', 'cf'
+list
+put 'test', 'row1', 'cf:a', 'value1'
+put 'test', 'row2', 'cf:b', 'value2'
+put 'test', 'row3', 'cf:c', 'value3'
+scan 'test'
+get 'test', 'row1'
+disable 'test' (enable)
+drop(delete) 'test'
+

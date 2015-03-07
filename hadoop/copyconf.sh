@@ -1,0 +1,10 @@
+cp hconf/hadoop-env.sh /usr/hadoop/etc/hadoop/hadoop-env.sh 
+cp hconf/mapred-site.xml /usr/hadoop/etc/hadoop/mapred-site.xml
+cp hconf/core-site.xml /usr/hadoop/etc/hadoop/core-site.xml
+cp hconf/yarn-site.xml /usr/hadoop/etc/hadoop/yarn-site.xml
+cp hconf/hdfs-site.xml /usr/hadoop/etc/hadoop/hdfs-site.xml
+cp hconf/slaves /usr/hadoop/etc/hadoop/slaves
+cp hconf/masters /usr/hadoop/etc/hadoop/masters
+cp hbconf/hbase-env.sh /usr/hadoop/hbase/conf/hbase-env.sh
+cp hbconf/hbase-site.xml /usr/hadoop/hbase/conf/hbase-site.xml
+cp hbconf/regionservers /usr/hadoop/hbase/conf/regionservers
