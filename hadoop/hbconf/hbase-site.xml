@@ -28,7 +28,7 @@
 
   <property>
      <name>hbase.rootdir</name>
-     <value>hdfs://hadoopmaster:9000/hbase</value>
+     <value>hdfs://hadoopm1:9000/hbase</value>
   </property>
   <property>
      <name>hbase.zookeeper.property.dataDir</name>
@@ -36,6 +36,6 @@
   </property>
   <property>
      <name>hbase.zookeeper.quorum</name>
-     <value>hadoopmaster,hadoopslave1,hadoopslave2</value>
+     <value>hadoopm1,hadoops1,hadoops2</value>
   </property>
 </configuration>

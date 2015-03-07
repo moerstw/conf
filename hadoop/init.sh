@@ -1,5 +1,5 @@
 apt-get install -y openjdk-7-jdk
-apt-get install -y maven3
+apt-get install -y maven
 
 echo '
 # HADOOP VARIABLES START

@@ -1,6 +1,6 @@
-192.168.181.128 hadoopmaster
-192.168.181.129 hadoopslave1
-192.168.181.130 hadoopslave2
+192.168.72.128 hadoopm1
+192.168.72.129 hadoops1
+192.168.72.130 hadoops2
 
 # 127.0.0.1	localhost
 # 127.0.0.1	hadoopmaster

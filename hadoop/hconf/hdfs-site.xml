@@ -23,7 +23,7 @@
   </property> 
   <property>
     <name>dfs.namenode.name.dir</name>
-    <value>file:/usr/local/hadoop_store/hdfs/namenode</value>
+    <value>file:/usr/hadoop/hstore/hdfs/namenode</value>
   </property> 
 <!--
   <property>

@@ -16,40 +16,20 @@
 
 <!-- Site specific YARN configuration properties -->
   <property>
-    <name>yarn.nodemanager.aux-services</name>
-    <value>mapreduce_shuffle</value>
+    <name>yarn.acl.enable</name>
+    <value>true</value>
   </property>
   <property>
-    <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>4096</value>
   </property>
   <property>
-    <name>yarn.resourcemanager.resource-tracker.address</name>
-    <value>hadoopmaster:8031</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.scheduler.address</name>
-    <value>hadoopmaster:8030</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.address</name>
-    <value>hadoopmaster:8032</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.admin.address</name>
-    <value>hadoopmaster:8033</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.webapp.address</name>
-    <value>hadoopmaster:8088</value>
+    <name>yarn.nodemanager.vmem-pmen-ratio</name>
+    <value>2.1</value>
   </property>
   <property>
     <name>yarn.resourcemanager.hostname</name>
-    <value>hadoopmaster</value>
-  </property>
-  <property>
-    <name>yarn.acl.enable</name>
-    <value>true</value>
+    <value>hadoopm1</value>
   </property>
 <!--
   <property>
@@ -64,6 +44,34 @@
   <property>
     <name>yarn.scheduler.maximum.allocation.mb</name>
     <value>4096</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.admin.address</name>
+    <value>hadoopm1:8033</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>hadoopm1:8031</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <value>hadoopm1:8030</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>hadoopm1:8032</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>hadoopm1:8088</value>
   </property>
   <property>
     <name>yarn.log-aggregation-enable</name>

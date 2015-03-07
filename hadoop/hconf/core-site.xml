@@ -19,7 +19,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://hadoopmaster:9000</value>  
+    <value>hdfs://hadoopm1:9000</value>  
   </property>
   <property>
     <name>io.file.buffer.size</name>

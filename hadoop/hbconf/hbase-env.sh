@@ -32,7 +32,7 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 # export HBASE_CLASSPATH=
 
 # The maximum amount of heap to use, in MB. Default is 1000.
-export HBASE_HEAPSIZE=4096
+export HBASE_HEAPSIZE=1024
 
 # Uncomment below if you intend to use off heap cache.
 # export HBASE_OFFHEAPSIZE=1000

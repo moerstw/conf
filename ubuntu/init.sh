@@ -1,3 +1,4 @@
+apt-get update
 apt-get -y install git
 apt-get -y install make
 apt-get -y install ruby-dev
@@ -5,8 +6,8 @@ apt-get -y install gcc
 apt-get -y install build-essential
 
 #please setting private key complete
-git config --globe user.name "moerstw"
-git config --globe user.email "moerstw@gmail.com"
+git config --global user.name "moerstw"
+git config --global user.email "moerstw@gmail.com"
 
 git clone git@github.com:moerstw/vimrc.git ~/.vim
 cd ~/.vim
