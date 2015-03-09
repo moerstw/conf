@@ -19,18 +19,16 @@
 <configuration>
   <property>
     <name>dfs.replication</name>
-    <value>3</value>
+    <value>1</value>  <!--pseudo-->
   </property> 
   <property>
     <name>dfs.namenode.name.dir</name>
-    <value>file:/usr/hadoop/hstore/hdfs/namenode</value>
- </property> 
- <!--
+    <value>file:/usr/hadoop/hstore/hdfs/pseudonamenode</value>
+  </property> 
   <property>
     <name>dfs.datanode.data.dir</name>
-    <value>file:/usr/hadoop/hstore/hdfs/datanode</value>
-  </property>
-  -->
+    <value>file:/usr/hadoop/hstore/hdfs/pseudodatanode</value>
+  </property> 
 <!--
   <property>
     <name>dfs.namenode.hosts</name>

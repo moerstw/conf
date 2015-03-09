@@ -18,31 +18,16 @@
 
 <configuration>
   <property>
-    <name>dfs.replication</name>
-    <value>3</value>
-  </property> 
-  <property>
-    <name>dfs.namenode.name.dir</name>
-    <value>file:/usr/hadoop/hstore/hdfs/namenode</value>
- </property> 
- <!--
-  <property>
-    <name>dfs.datanode.data.dir</name>
-    <value>file:/usr/hadoop/hstore/hdfs/datanode</value>
+    <name>fs.defaultFS</name>
+    <value>hdfs://hadoops0:9000</value> <!-- for pseudo -->  
   </property>
-  -->
-<!--
   <property>
-    <name>dfs.namenode.hosts</name>
-    <value>datanode1,datanode2</value>
-  </property> 
--->
+    <name>io.file.buffer.size</name>
+    <value>131072</value>  
+  </property>
   <property>
-    <name>dfs.blocksize</name>
-    <value>268435456</value>
-  </property> 
-  <property>
-    <name>dfs.namenode.handler.count</name>
-    <value>100</value>
-  </property> 
+    <name>hadoop.tmp.dir</name>
+    <value>file:/root/temp/pseudo</value>  
+  </property>
+  
 </configuration>

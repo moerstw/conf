@@ -3,11 +3,12 @@ yes Y | hdfs namenode -format
 yes Y | start-dfs.sh
 yes Y | start-yarn.sh
 hdfs dfs -mkdir /hbase
+hdfs dfs -mkdir /user/root/hbase
 yes Y | start-hbase.sh
 
 # jps => master 6 slave 5
 # test hdfs
-hdfs dfs -mkdir /user/root/input
+hdfs dfs -mkdir -p /user/root/input
 hdfs dfs -put /usr/hadoop/etc/hadoop/* input
 # test hadoop
 yarn jar /usr/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount input output

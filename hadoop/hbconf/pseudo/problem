@@ -1,0 +1,27 @@
+https://issues.apache.org/jira/browse/HBASE-11575
+
+can't in psudo that using same Hregionserver port 16020
+hbase.master.wait.on.regionservers.mintostart set 1
+
+http://www.cnblogs.com/liuchangchun/p/4096891.html
+
+1).
+
+Start and stop additional RegionServers
+
+The HRegionServer manages the data in its StoreFiles as directed by the HMaster. 
+Generally, one HRegionServer runs per node in the cluster. 
+Running multiple HRegionServers on the same system can be useful for testing in pseudo-distributed mode. 
+The local-regionservers.sh command allows you to run multiple RegionServers. 
+It works in a similar way to the local-master-backup.sh command, in that each parameter you provide represents the port offset for an instance. 
+Each RegionServer requires two ports, and the default ports are 16020 and 16030. 
+However, the base ports for additional RegionServers are not the default ports since the default ports are used by the HMaster, which is also a RegionServer since HBase version 1.0.0. 
+The base ports are 16200 and 16300 instead. 
+You can run 99 additional RegionServers that are not a HMaster or backup HMaster, on a server. 
+The following command starts four additional RegionServers, running on sequential ports starting at 16202/16302 (base ports 16200/16300 plus 
+
+2).
+
+$ .bin/local-regionservers.sh start 2 3 4 5            
+To stop a RegionServer manually, use the local-regionservers.sh command with the stop parameter and the offset of the server to stop.
+$ .bin/local-regionservers.sh stop 3
