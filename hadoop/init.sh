@@ -1,9 +1,9 @@
-apt-get install -y openjdk-7-jdk
+apt-get install -y openjdk-8-jdk
 apt-get install -y maven
 
 echo '
 # HADOOP VARIABLES START
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_HOME=/usr/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HADOOP_HOME/sbin
