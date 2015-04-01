@@ -29,7 +29,7 @@
   </property>
   <property>
     <name>yarn.resourcemanager.hostname</name>
-    <value>hadoopm1</value>
+    <value>hadoops0</value>
   </property>
 <!--
   <property>
@@ -47,7 +47,7 @@
   </property>
   <property>
     <name>yarn.resourcemanager.admin.address</name>
-    <value>hadoopm1:8033</value>
+    <value>hadoops0:8033</value>
   </property>
   <property>
     <name>yarn.nodemanager.aux-services</name>
@@ -59,19 +59,19 @@
   </property>
   <property>
     <name>yarn.resourcemanager.resource-tracker.address</name>
-    <value>hadoopm1:8031</value>
+    <value>hadoops0:8031</value>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.address</name>
-    <value>hadoopm1:8030</value>
+    <value>hadoops0:8030</value>
   </property>
   <property>
     <name>yarn.resourcemanager.address</name>
-    <value>hadoopm1:8032</value>
+    <value>hadoops0:8032</value>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.address</name>
-    <value>hadoopm1:8088</value>
+    <value>hadoops0:8088</value>
   </property>
   <property>
     <name>yarn.log-aggregation-enable</name>

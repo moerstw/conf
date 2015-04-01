@@ -6,15 +6,15 @@ auto lo
 iface lo inet loopback
 
 # The primary network interface
-auto eth0
+#auto eth0
 #
 # iface eth0 inet dhcp
-iface eth0 inet static
+#iface eth0 inet static
 # m1 128 m2 129 m3 130
-address 192.168.72.128
-netmask 255.255.255.0
+#address 192.168.72.128
+#netmask 255.255.255.0
 # hostname hadoopmaster
-gateway 192.168.72.2
-dns-nameservers 192.168.72.2
-auto eth0
+#gateway 192.168.72.2
+#dns-nameservers 192.168.72.2
+#auto eth0
 # route add -net 140. netmask 255.255.255.0 gw 192.168.137.1 dev eth0
