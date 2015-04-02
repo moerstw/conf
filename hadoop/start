@@ -33,4 +33,23 @@ scan 'test'
 get 'test', 'row1'
 disable 'test' (enable)
 drop(delete) 'test'
-
+# chromebook
+iptables open all port
+/etc/rc.local
+sudo iptables -I INPUT -p tcp --dport 22 -j ACCEPT
+POLICY
+iptables -P INPUT DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables-save
+remove all temp data to add a new node
+hadoop dfsadmin -safemode leave
+bin/hadoop-daemon.sh start datanode
+bin/hadoop-daemon.sh start tasktracker
+hadoop dfsadmin -refreshNodes
+hadoop mradmin -refreshNodes
+modify slaves ip
+19888
+8088
+8084
+50070

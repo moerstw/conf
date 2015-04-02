@@ -27,6 +27,7 @@
       Execution framework set to Hadoop YARN
     </description>
   </property>
+
   <property>
     <name>mapreduce.map.memory.mb</name>
     <value>2048</value>
@@ -57,31 +58,49 @@
   </property>
   <property>
     <name>mapreduce.task.io.sort.mb</name>
-    <value>1024</value>
+    <value>512</value>
     <description>
       Higher memory-limit while sorting data for efficiency
     </description>
   </property>
   <property>
     <name>mapreduce.task.io.sort.factor</name>
-    <value>200</value>
+    <value>50</value>
     <description>
       More streams merged at once while sort files
     </description>
   </property>
   <property>
     <name>mapreduce.reduce.shuffle.parallelcopies</name>
-    <value>100</value>
+    <value>10</value>
     <description>
       Higher number of parallel copies run by reduces to fetch outputs from large number of maps.
     </description>
   </property>
-
+  <property>
+    <name>mapred.child.java.opts</name>
+    <value>-Xmx4096m</value>
+  </property>
+  <!--
+  <property>
+    <name>mapreduce.application.classpath</name>
+    <value>
+      $HADOOP_HOME/etc/hadoop,
+      $HADOOP_HOME/share/hadoop/common/*,
+      $HADOOP_HOME/share/hadoop/common/lib/*,
+      $HADOOP_HOME/share/hadoop/hdfs/*,
+      $HADOOP_HOME/share/hadoop/hdfs/lib/*,
+      $HADOOP_HOME/share/hadoop/mapreduce/*,
+      $HADOOP_HOME/share/hadoop/mapreduce/lib/*,
+      $HADOOP_HOME/share/hadoop/yarn/*,
+      $HADOOP_HOME/share/hadoop/yarn/lib/*
+    </value>
+  </property>
+  -->
 
 
   
   <!-- ##### For MapReduce JobHistory Server ##### -->
-
   <property>
     <name>mapreduce.jobhistory.address</name>
     <value>hadoops0:10020</value>
@@ -100,19 +119,18 @@
   </property>
   <property>
     <name>mapreduce.jobhistory.intermediate-done-dir</name>
-    <value>file:/usr/hadoop/mapreduce/jobhistory/temp</value>
+    <value>jobhistory/temp</value>
     <description>
       Directory where history files are written by MapReduce jobs.
     </description>
   </property>
   <property>
     <name>mapreduce.jobhistory.done-dir</name>
-    <value>file:/usr/hadoop/mapreduce/jobhistory/done</value>
+    <value>jobhistory/done</value>
     <description>
       Directory where history files are managed by the MR JobHistory Server.
     </description>
   </property>
-
 
 
 

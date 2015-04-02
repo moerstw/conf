@@ -65,8 +65,7 @@
   
   
   <!-- ##### For DataNode ##### -->
-
-  <!-- 
+ 
   <property>
     <name>dfs.datanode.data.dir</name>
     <value>file:/usr/hadoop/hstore/hdfs/datanode</value>
@@ -78,7 +77,6 @@
       typically on different device.
     </description>
   </property>
-  -->
 
 
 

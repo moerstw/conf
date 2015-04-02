@@ -68,7 +68,7 @@
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.class</name>
-    <value>CapacityScheduler</value>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
     <description>
       ResourceManager scheduler class.
       CapacityScheduler (recommended), 
@@ -93,7 +93,6 @@
 
 
   <!-- ##### For NodeManager #####-->
-
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>
     <value>4096</value>
@@ -121,7 +120,7 @@
   </property>
   <property>
     <name>yarn.nodemanager.log-dirs</name>
-    <value>file:/usr/hadoop/tmp/yarnNodeManagerLog</value>
+    <value>file:/usr/hadoop/temp/yarnNodeManagerLog</value>
     <description>
       Comma-separated list of paths on the local filesystem where log are written.
       Multiple paths help spread disk i/o.
@@ -166,9 +165,7 @@
 
 
 
-
   <!-- ##### Configurations for History Server (Needs to be moved elsewhere) -->
-
   <property>
     <name>yarn.log-aggregation.retain-seconds</name>
     <value>-1</value>
@@ -189,10 +186,7 @@
   </property>
 
 
-
-
   <!-- ##### Comman or don't know #####-->
-
   <property>
     <name>yarn.acl.enable</name>
     <value>true</value>
@@ -215,7 +209,33 @@
       Configuration to enable or disable log aggregation.
     </description>
   </property>
-
+  <!--
+  <property>
+    <name>yarn.application.classpath</name>
+    <value>
+      $HADOOP_HOME/etc/hadoop,
+      $HADOOP_HOME/share/hadoop/common/*,
+      $HADOOP_HOME/share/hadoop/common/lib/*,
+      $HADOOP_HOME/share/hadoop/hdfs/*,
+      $HADOOP_HOME/share/hadoop/hdfs/lib/*,
+      $HADOOP_HOME/share/hadoop/mapreduce/*,
+      $HADOOP_HOME/share/hadoop/mapreduce/lib/*,
+      $HADOOP_HOME/share/hadoop/yarn/*,
+      $HADOOP_HOME/share/hadoop/yarn/lib/*
+     </value>
+    <description>
+      CLASSPATH for YARN applications. A comma-separated list of CLASSPATH entries. 
+      When this value is empty, the following default CLASSPATH for YARN applications would be used. 
+      For Linux: $HADOOP_CONF_DIR, $HADOOP_COMMON_HOME/share/hadoop/common/*, 
+      $HADOOP_COMMON_HOME/share/hadoop/common/lib/*, $HADOOP_HDFS_HOME/share/hadoop/hdfs/*, 
+      $HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*, $HADOOP_YARN_HOME/share/hadoop/yarn/*, 
+      $HADOOP_YARN_HOME/share/hadoop/yarn/lib/* For Windows: %HADOOP_CONF_DIR%, 
+      %HADOOP_COMMON_HOME%/share/hadoop/common/*, %HADOOP_COMMON_HOME%/share/hadoop/common/lib/*, 
+      %HADOOP_HDFS_HOME%/share/hadoop/hdfs/*, %HADOOP_HDFS_HOME%/share/hadoop/hdfs/lib/*, 
+      %HADOOP_YARN_HOME%/share/hadoop/yarn/*, %HADOOP_YARN_HOME%/share/hadoop/yarn/lib/*
+    </description>
+  </property>
+  -->
 
 
 

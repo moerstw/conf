@@ -19,15 +19,29 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://hadoops0:9000</value>  
+    <value>hdfs://hadoops0:8020</value>  
+    <description>
+      NameNode URI
+      hdfs://host:port/ (default should 8020)
+      file:///
+      The name of the default file system. A URI whose scheme and authority determine the FileSystem implementation.
+      The uri's scheme determines the config property (fs.SCHEME.impl) naming the FileSystem implementation class. 
+      The uri's authority is used to determine the host, port, etc. for a filesystem
+    </description>
   </property>
   <property>
     <name>io.file.buffer.size</name>
     <value>131072</value>  
+    <description>
+      Size of read/write buffer used in SequenceFiles.
+    </description>
   </property>
   <property>
     <name>hadoop.tmp.dir</name>
     <value>file:/usr/hadoop/temp</value>  
+    <description>
+      A base for other temporary directories.
+    </description>
   </property>
   
 </configuration>
