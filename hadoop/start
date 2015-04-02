@@ -6,9 +6,17 @@ hdfs dfs -mkdir /hbase
 hdfs dfs -mkdir /user/root/hbase
 yes Y | start-hbase.sh
 
+yarn-daemon.sh start resourcemanager
+yarn-daemon.sh start nodemanager
+hadoop-daemon.sh start namenode
+hadoop-daemon.sh start datanode
+mr-jobhistory-daemon.sh start historyserver
+
 # jps => master 6 slave 5
 # test hdfs
 hdfs dfs -mkdir -p /user/root/input
+hdfs dfs -mkdir -p /user/root/logs
+hdfs dfs -mkdir -p /logs
 hdfs dfs -put /usr/hadoop/etc/hadoop/* input
 # test hadoop
 yarn jar /usr/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount input output

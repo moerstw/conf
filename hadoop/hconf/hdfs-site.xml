@@ -17,32 +17,80 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-  <property>
-    <name>dfs.replication</name>
-    <value>3</value>
-  </property> 
+
+  <!-- ##### For NameNode ##### -->
+
   <property>
     <name>dfs.namenode.name.dir</name>
     <value>file:/usr/hadoop/hstore/hdfs/namenode</value>
- </property> 
- <!--
-  <property>
-    <name>dfs.datanode.data.dir</name>
-    <value>file:/usr/hadoop/hstore/hdfs/datanode</value>
-  </property>
-  -->
-<!--
-  <property>
-    <name>dfs.namenode.hosts</name>
-    <value>datanode1,datanode2</value>
+    <description>
+      Path on the local filesystem where the NameNode 
+      stores the namespace and transactions logs persistently.
+      If this is a comma-delimited list of directories then the name table 
+      is replicated all of the directories, for redundancy.
+    </description>
   </property> 
--->
   <property>
     <name>dfs.blocksize</name>
     <value>268435456</value>
+    <description>
+      HDFS blocksize of 256MB for large file-systems.
+    </description>
   </property> 
   <property>
     <name>dfs.namenode.handler.count</name>
     <value>100</value>
+    <description>
+      More NameNode server threads to handle RPCs from large number of DataNodes.
+    </description>
   </property> 
+  <!-- 
+  <property>
+    <name>dfs.namenode.hosts hosts.exclude</name>
+    <value>s1, s2</value>
+    <description>
+      List of permitted/excluded DataNodes.
+      If necessary, use there files to control the list of allowable datanodes.
+    </description>
+  </property>
+  -->
+  <!--
+  <property>
+    <name>dfs.namenode.hosts</name>
+    <value>datanode1,datanode2</value>
+  </property> 
+  -->
+  
+  
+  
+  
+  <!-- ##### For DataNode ##### -->
+
+  <!-- 
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:/usr/hadoop/hstore/hdfs/datanode</value>
+    <description>
+      Comma separated list of paths on the local filesystem of 
+      a DataNode where it should store its blocks.
+      If this is a comma-delimited list of directories, 
+      then data will be stored in all named directories, 
+      typically on different device.
+    </description>
+  </property>
+  -->
+
+
+
+  <!-- ##### Common or don't know ##### -->
+
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property> 
+
+
+
+
+
 </configuration>

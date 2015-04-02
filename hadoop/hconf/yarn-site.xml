@@ -13,68 +13,210 @@
   limitations under the License. See accompanying LICENSE file.
 -->
 <configuration>
-
 <!-- Site specific YARN configuration properties -->
+
+  <!-- ##### For ResourceManager #####-->
+
   <property>
-    <name>yarn.acl.enable</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.resource.memory-mb</name>
-    <value>4096</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.vmem-pmen-ratio</name>
-    <value>2.1</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.hostname</name>
-    <value>hadoops0</value>
-  </property>
-<!--
-  <property>
-    <name>yarn.admin.acl</name>
-    <value>*</value>
-  </property>
--->
-  <property>
-    <name>yarn.scheduler.minimum.allocation.mb</name>
-    <value>1024</value>
-  </property>
-  <property>
-    <name>yarn.scheduler.maximum.allocation.mb</name>
-    <value>4096</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.admin.address</name>
-    <value>hadoops0:8033</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.aux-services</name>
-    <value>mapreduce_shuffle</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.resource-tracker.address</name>
-    <value>hadoops0:8031</value>
+    <name>yarn.resourcemanager.address</name>
+    <value>hadoops0:8032</value>
+    <description>
+      ResourceManager host:port for clients to submit jobs.
+      If set, overrides the hostname set in yarn.resourcemanager.hostname.
+    </description>
   </property>
   <property>
     <name>yarn.resourcemanager.scheduler.address</name>
     <value>hadoops0:8030</value>
+    <description>
+      ResourceManager host:port for ApplicationMasters to talk to Scheduler to obtain resources.
+      If set, overrides the hostname set in yarn-resourcemanager.hostname.
+    </description>
   </property>
   <property>
-    <name>yarn.resourcemanager.address</name>
-    <value>hadoops0:8032</value>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>hadoops0:8031</value>
+    <description>
+      ResourceManager host:port for NodeManagers.
+      If set, overrides the hostname set in yarn-resourcemanager.hostname.
+    </description>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.admin.address</name>
+    <value>hadoops0:8033</value>
+    <description>
+      ResourceManager host:port for administrative commands.
+      If set, overrides the hostname set in yarn-resourcemanager.hostname.
+    </description>
   </property>
   <property>
     <name>yarn.resourcemanager.webapp.address</name>
     <value>hadoops0:8088</value>
+    <description>
+      ResourceManager web-ui host:port
+      If set, overrides the hostname set in yarn-resourcemanager.hostname.
+    </description>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>hadoops0</value>
+    <description>
+      ResourceManager host.
+      Single hostname that can be set in place of setting all yarn.resourcemanager*address resources.
+      Results in default ports for ResourceManager components.
+    </description>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.scheduler.class</name>
+    <value>CapacityScheduler</value>
+    <description>
+      ResourceManager scheduler class.
+      CapacityScheduler (recommended), 
+      FairScheduler (also recommended), 
+      or FifoScheduler
+    </description>
+  </property>
+  <property>
+    <name>yarn.scheduler.minimum.allocation.mb</name>
+    <value>1024</value>
+    <description>
+      Minimum limit of memory to allocate to eache container request at the Resource Manager.(In MBs)
+    </description>
+  </property>
+  <property>
+    <name>yarn.scheduler.maximum.allocation.mb</name>
+    <value>4096</value>
+    <description>
+      Maximum limit of memory to allocate to eache container request at the Resource Manager.(In MBs)
+    </description>
+  </property>
+
+
+  <!-- ##### For NodeManager #####-->
+
+  <property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>4096</value>
+    <description>
+      Resource i.e available physical memory, in MB, for given NodeManager
+      Defines total available resources on the NodeManager to be made available to running cantainers
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.vmem-pmen-ratio</name>
+    <value>2.1</value>
+    <description>
+      Maximum ratio by which virtual memory usage of tasks may exceed physical memory.
+      The virtual memory usage of eache task may exceed its physical memory limit by this ratio. 
+      The total amount of virtual memory used by tasks on the NodeManager may exceed its physical memory usage by this ratio.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.local-dirs</name>
+    <value>file:/usr/hadoop/temp/yarnNodeManagerLocal</value>
+    <description>
+      Comma-separated list of paths on the local filesystem where intermediate data is written.
+      Multiple paths help spread disk i/o.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.log-dirs</name>
+    <value>file:/usr/hadoop/tmp/yarnNodeManagerLog</value>
+    <description>
+      Comma-separated list of paths on the local filesystem where log are written.
+      Multiple paths help spread disk i/o.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.log.retain-seconds</name>
+    <value>10800</value>
+    <description>
+      Default time (in seconds) to retain log files on the NodeManager Only applicable if log-aggregation is disabled.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.remote-app-log-dir</name>
+    <value>/logs</value>
+    <description>
+      HDFS directory where the application logs are moved on application completion. Need to set appropriate permissions.
+      Only applicable if log-aggregation is enabled.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.remote-app-log-dir-suffix</name>
+    <value>logs</value>
+    <description>
+      Suffix appended to the remote log dir. Logs will be aggregated to ${yarn.nodemanager.remote-app-log-dir}/${user}/${thisParam}
+      Only applicable if log-aggregation is enabled.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+    <description>
+      Shuffle service that needs to be set for Map Reduce applications.
+    </description>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    <description>
+    </description>
+  </property>
+
+
+
+
+  <!-- ##### Configurations for History Server (Needs to be moved elsewhere) -->
+
+  <property>
+    <name>yarn.log-aggregation.retain-seconds</name>
+    <value>-1</value>
+    <description>
+      How long to keep aggregation logs before deleting them, -1 disables.
+      Be careful, set this too small and you will spam the name node.
+    </description>
+  </property>
+  <property>
+    <name>yarn.log-aggregation.retain-check-interval-seconds</name>
+    <value>-1</value>
+    <description>
+      Time between checks for aggregated log retention. 
+      If set to 0 or a negative value then the value is computed as one-
+      tenth of the aggregated log retention time. 
+      Be careful, set this too small and you will spam the name node.
+    </description>
+  </property>
+
+
+
+
+  <!-- ##### Comman or don't know #####-->
+
+  <property>
+    <name>yarn.acl.enable</name>
+    <value>true</value>
+    <description>
+      Enable ACLs? Defaults to false.
+    </description>
+  </property>
+  <property>
+    <name>yarn.admin.acl</name>
+    <value>*</value>
+    <description>
+      ACL to set admins on the cluster. ACLs are of for comma-separated-usersspacecomma-separated-groups.
+      Defaults to special value of * which means anyone. Special value of just space means no one has access.
+    </description>
   </property>
   <property>
     <name>yarn.log-aggregation-enable</name>
     <value>true</value>
+    <description>
+      Configuration to enable or disable log aggregation.
+    </description>
   </property>
+
+
+
+
 </configuration>

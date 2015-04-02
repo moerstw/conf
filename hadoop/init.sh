@@ -1,6 +1,6 @@
 apt-get install -y openjdk-8-jdk
 apt-get install -y maven
-
+# update-alternative --config java
 echo '
 # HADOOP VARIABLES START
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -19,6 +19,10 @@ export PATH=$PATH:$HBASE_HOME/bin
 ' >> ~/.bashrc
 mkdir -p /usr/hadoop/hstore/hdfs/namenode
 mkdir -p /usr/hadoop/hstore/hdfs/datanode
+mkdir -p /usr/hadoop/mapreduce/jobhistory/temp
+mkdir -p /usr/hadoop/mapreduce/jobhistory/done
 mkdir -p /usr/hadoop/hstore/hdfs/pseudonamenode
 mkdir -p /usr/hadoop/hstore/hdfs/pseudodatanode
-
+mkdir -p /usr/hadoop/temp
+mkdir -p /usr/hadoop/temp/yarnNodeManagerLocal
+mkdir -p /usr/hadoop/temp/yarnNodeManagerLog
