@@ -19,6 +19,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
+    <!-- ><value>hdfs://hadoops0:9000</value> for pseudo -->  
     <value>hdfs://hadoops0:9000</value> <!-- for pseudo -->  
   </property>
   <property>

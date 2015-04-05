@@ -1,5 +1,8 @@
+# need ubuntu 14.10
 apt-get install -y openjdk-8-jdk
 apt-get install -y maven
+apt-get install -y openssh-server
+apt-get install -y openssh-client
 # update-alternative --config java
 echo '
 # HADOOP VARIABLES START
