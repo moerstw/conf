@@ -35,3 +35,4 @@ mkdir -p /usr/hadoop/hstore/hdfs/pseudodatanode
 mkdir -p /usr/hadoop/temp
 mkdir -p /usr/hadoop/temp/yarnNodeManagerLocal
 mkdir -p /usr/hadoop/temp/yarnNodeManagerLog
+mkdir -p /usr/hadoop/hbase/temp

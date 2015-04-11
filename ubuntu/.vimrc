@@ -75,8 +75,8 @@ set tm=500
 
 " TAB setting{
    set expandtab        "replace <TAB> with spaces
-   set softtabstop=3 
-   set shiftwidth=4 
+   set softtabstop=2
+   set shiftwidth=2
 
    au FileType Makefile set noexpandtab
 "}      							
@@ -327,7 +327,6 @@ let g:tagbar_autofocus = 1
 " --- PowerLine
 " let g:Powerline_symbols = 'fancy' " require fontpatcher
 "
-"
 
 " --- SnipMate
 let g:snipMateAllowMatchingDot = 0
@@ -341,8 +340,4 @@ let g:gitgutter_enabled = 1
 " set ejs filetype to html
 au BufNewFile,BufRead *.ejs set filetype=html
 
-" moerstw setting
-" avoid esc key
-imap <leader>m <Esc>
-nmap <C-J> maO<Esc>
-nmap <C-K> o<Esc>k
+se nu

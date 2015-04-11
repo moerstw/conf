@@ -19,7 +19,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <!-- ><value>hdfs://hadoops0:9000</value> for pseudo -->  
+    <!-- <value>hdfs://hadoops0:9000</value> for pseudo -->  
     <value>hdfs://hadoops0:9000</value> <!-- for pseudo -->  
   </property>
   <property>
@@ -28,7 +28,7 @@
   </property>
   <property>
     <name>hadoop.tmp.dir</name>
-    <value>file:/root/temp/pseudo</value>  
+    <value>file:/usr/hadoop/temp</value>  
   </property>
   
 </configuration>

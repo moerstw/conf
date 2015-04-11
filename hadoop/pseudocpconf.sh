@@ -8,3 +8,4 @@ rsync -a hconf/pseudo/masters /usr/hadoop/etc/hadoop/masters
 rsync -a hbconf/hbase-env.sh /usr/hadoop/hbase/conf/hbase-env.sh
 rsync -a hbconf/pseudo/hbase-site.xml /usr/hadoop/hbase/conf/hbase-site.xml
 rsync -a hbconf/pseudo/regionservers /usr/hadoop/hbase/conf/regionservers
+rsync -a hbconf/pseudo/start-hbase.sh /usr/hadoop/hbase/bin/start-hbase.sh

@@ -28,7 +28,7 @@
 
   <property>
      <name>hbase.rootdir</name>
-     <value>hdfs://hadoops0:9000/hbase</value>
+     <value>hdfs://hadoops0:8020/hbase</value>
   </property>
   <property>
      <name>hbase.zookeeper.property.dataDir</name>

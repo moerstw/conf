@@ -1,0 +1,14 @@
+rm -r /usr/hadoop/hstore/hdfs/namenode/*
+rm -r /usr/hadoop/hstore/hdfs/datenode/*
+rm -r /usr/hadoop/hstore/hdfs/pseudonamenode/*
+rm -r /usr/hadoop/hstore/hdfs/pseudodatanode/*
+rm -r /usr/hadoop/temp
+rm -r /usr/hadoop/hbase/temp
+mkdir -p /usr/hadoop/hstore/hdfs/namenode
+mkdir -p /usr/hadoop/hstore/hdfs/datanode
+mkdir -p /usr/hadoop/hstore/hdfs/pseudonamenode
+mkdir -p /usr/hadoop/hstore/hdfs/pseudodatanode
+mkdir -p /usr/hadoop/temp
+mkdir -p /usr/hadoop/temp/yarnNodeManagerLocal
+mkdir -p /usr/hadoop/temp/yarnNodeManagerLog
+mkdir -p /usr/hadoop/hbase/temp

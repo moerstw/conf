@@ -33,21 +33,19 @@
   </property>
   <property>
      <name>hbase.zookeeper.property.dataDir</name>
-     <value>/root/temp/pseudozookeeper</value>
+     <value>/usr/hadoop/hbase/temp/pseudozookeeper</value>
   </property>
-  <property>
   <property>
      <name>hbase.tmp.dir</name>
-     <value>file:/usr/hadoop/hbase/tmp</value>
+     <value>file:/usr/hadoop/hbase/temp</value>
   </property>
+  <property>
      <name>hbase.master.wait.on.regionservers.mintostart</name>
      <value>1</value>
      <!--<description>for pseudo distribution</description>-->
   </property>
-  <!--
   <property>
      <name>hbase.zookeeper.quorum</name>
-     <value>hadoops0,hadoops1,hadoops2</value>
+     <value>hadoops0</value>
   </property>
-  -->
 </configuration>
