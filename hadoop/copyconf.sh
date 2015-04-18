@@ -5,6 +5,7 @@ rsync -a hconf/yarn-site.xml /usr/hadoop/etc/hadoop/yarn-site.xml
 rsync -a hconf/hdfs-site.xml /usr/hadoop/etc/hadoop/hdfs-site.xml
 rsync -a hconf/slaves /usr/hadoop/etc/hadoop/slaves
 rsync -a hconf/masters /usr/hadoop/etc/hadoop/masters
+rsync -a hconf/start-dfs.sh /usr/hadoop/sbin/start-dfs.sh
 rsync -a hbconf/hbase-env.sh /usr/hadoop/hbase/conf/hbase-env.sh
 rsync -a hbconf/hbase-site.xml /usr/hadoop/hbase/conf/hbase-site.xml
 rsync -a hbconf/regionservers /usr/hadoop/hbase/conf/regionservers
